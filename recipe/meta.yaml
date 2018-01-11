@@ -1,4 +1,4 @@
-{% set version = '1.0.1' %}
+{% set version = '1.1.2' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/igraph_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: dc64ed09b8b5f8d66ed4936cde3491974d6bc5178dd259b6eab7ef3936aa5602
+  sha256: 89b16b41bc77949ea208419e52a18b78b5d418c7fedc52cd47d06a51a6e746ec
 
 build:
   number: 0
@@ -30,6 +30,7 @@ requirements:
     - r-nmf
     - r-irlba
     - r-magrittr
+    - r-pkgconfig
     - posix                # [win]
     - {{native}}toolchain  # [win]
     - gcc                  # [not win]
@@ -41,6 +42,7 @@ requirements:
     - r-nmf
     - r-irlba
     - r-magrittr
+    - r-pkgconfig
     - libgcc  # [not win]
     - {{native}}gmp >=5.0.1,<7
 
