@@ -1,4 +1,4 @@
-{% set version = '1.1.2' %}
+{% set version = "1.2.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/igraph_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 89b16b41bc77949ea208419e52a18b78b5d418c7fedc52cd47d06a51a6e746ec
+  sha256: 55341848f85a436c32d60f59a4db485238d535f2e8afe0d5a360804fc33299c1
 
 build:
   number: 0
