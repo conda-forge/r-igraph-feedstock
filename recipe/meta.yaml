@@ -15,7 +15,8 @@ source:
   sha256: 55341848f85a436c32d60f59a4db485238d535f2e8afe0d5a360804fc33299c1
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   # compilation errors on windows
   skip: true  # [win]
 
@@ -25,15 +26,20 @@ build:
 
 requirements:
   build:
+    - posix                # [win]
+    - {{ compiler('fortran') }}        # [unix]
+    - {{ compiler('m2w64_fortran') }}  # [win]
+    - {{ compiler('c') }}        # [unix]
+    - {{ compiler('m2w64_c') }}  # [win]
+    - {{ compiler('cxx') }}        # [unix]
+    - {{ compiler('m2w64_cxx') }}  # [win]
+  host:
     - r-base
     - r-matrix
     - r-nmf
     - r-irlba
     - r-magrittr
     - r-pkgconfig
-    - posix                # [win]
-    - {{native}}toolchain  # [win]
-    - gcc                  # [not win]
     - {{native}}gmp >=5.0.1,<7
 
   run:
@@ -43,7 +49,6 @@ requirements:
     - r-irlba
     - r-magrittr
     - r-pkgconfig
-    - libgcc  # [not win]
     - {{native}}gmp >=5.0.1,<7
 
 test:
