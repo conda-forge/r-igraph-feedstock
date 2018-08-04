@@ -17,6 +17,7 @@ source:
 build:
   merge_build_host: True  # [win]
   merge_build_host: True  # [win]
+  merge_build_host: True  # [win]
   number: 0
   rpaths:
     - lib/R/lib/
@@ -25,6 +26,10 @@ build:
 requirements:
   build:
     - posix                # [win]
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - {{ compiler('fortran') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
