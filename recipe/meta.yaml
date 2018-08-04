@@ -17,9 +17,6 @@ source:
 build:
   merge_build_host: True  # [win]
   number: 0
-  # compilation errors on windows
-  skip: true  # [win]
-
   rpaths:
     - lib/R/lib/
     - lib/
