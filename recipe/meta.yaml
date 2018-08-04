@@ -1,4 +1,4 @@
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,14 +12,13 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/igraph_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 55341848f85a436c32d60f59a4db485238d535f2e8afe0d5a360804fc33299c1
+  sha256: 9da2dadf9c1ed495413b32464c6a32fae9d33636822754043e708d8dd6a9efad
 
 build:
   merge_build_host: True  # [win]
-  number: 1
-  # compilation errors on windows
-  skip: true  # [win]
-
+  merge_build_host: True  # [win]
+  merge_build_host: True  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -27,6 +26,14 @@ build:
 requirements:
   build:
     - posix                # [win]
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - {{ compiler('fortran') }}        # [unix]
     - {{ compiler('m2w64_fortran') }}  # [win]
     - {{ compiler('c') }}        # [unix]
