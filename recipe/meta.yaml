@@ -16,7 +16,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
 
   rpaths:
     - lib/R/lib/
@@ -43,14 +43,15 @@ requirements:
     - r-base
     - r-matrix
     - r-magrittr
-    - r-pkgconfig
+    - r-pkgconfig >=2.0.0
     - {{native}}gmp >=5.0.1,<7
 
   run:
     - r-base
+    - {{native}}gcc-libs         # [win]
     - r-matrix
     - r-magrittr
-    - r-pkgconfig
+    - r-pkgconfig >=2.0.0
     - {{native}}gmp >=5.0.1,<7
 
 test:
