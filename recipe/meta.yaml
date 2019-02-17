@@ -1,5 +1,4 @@
-{% set version = '1.2.2' %}
-
+{% set version = '1.2.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,16 +7,14 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: igraph_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 9da2dadf9c1ed495413b32464c6a32fae9d33636822754043e708d8dd6a9efad
+  sha256: 1048eb26ab6b592815bc269c1d91e974c86c9ab827ccb80ae0a40042019592cb
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
-
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -38,21 +35,17 @@ requirements:
     - {{posix}}make
     - {{posix}}coreutils         # [win]
     - {{posix}}zip               # [win]
-
   host:
     - r-base
     - r-matrix
     - r-magrittr
     - r-pkgconfig >=2.0.0
-    - {{native}}gmp >=5.0.1,<7
-
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
     - r-matrix
     - r-magrittr
     - r-pkgconfig >=2.0.0
-    - {{native}}gmp >=5.0.1,<7
 
 test:
   commands:
@@ -66,13 +59,30 @@ about:
     and provides functions for generating random and regular graphs, graph visualization,
     centrality methods and much more.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+    - philip-khor
+
+# Package: igraph
+# Version: 1.2.4
+# Title: Network Analysis and Visualization
+# Author: See AUTHORS file.
+# Maintainer: Gabor Csardi <csardi.gabor@gmail.com>
+# Description: Routines for simple graphs and network analysis. It can handle large graphs very well and provides functions for generating random and regular graphs, graph visualization, centrality methods and much more.
+# Depends: methods
+# Imports: graphics, grDevices, magrittr, Matrix, pkgconfig (>= 2.0.0), stats, utils
+# Suggests: ape, digest, graph, igraphdata, rgl, scales, stats4, tcltk, testthat
+# License: GPL (>= 2)
+# URL: http://igraph.org
+# SystemRequirements: gmp (optional), libxml2 (optional), glpk (optional)
+# BugReports: https://github.com/igraph/igraph/issues
+# Encoding: UTF-8
+# RoxygenNote: 6.1.1
+# Collate: 'adjacency.R' 'auto.R' 'assortativity.R' 'attributes.R' 'basic.R' 'bipartite.R' 'centrality.R' 'centralization.R' 'cliques.R' 'cocitation.R' 'cohesive.blocks.R' 'community.R' 'components.R' 'console.R' 'conversion.R' 'data_frame.R' 'decomposition.R' 'degseq.R' 'demo.R' 'embedding.R' 'epi.R' 'fit.R' 'flow.R' 'foreign.R' 'games.R' 'glet.R' 'hrg.R' 'igraph-package.R' 'incidence.R' 'indexing.R' 'interface.R' 'iterators.R' 'layout.R' 'layout_drl.R' 'lazyeval.R' 'make.R' 'minimum.spanning.tree.R' 'motifs.R' 'nexus.R' 'operators.R' 'other.R' 'package.R' 'palette.R' 'par.R' 'paths.R' 'plot.R' 'plot.common.R' 'plot.shapes.R' 'pp.R' 'print.R' 'printr.R' 'random_walk.R' 'rewire.R' 'scan.R' 'scg.R' 'sgm.R' 'similarity.R' 'simple.R' 'sir.R' 'socnet.R' 'sparsedf.R' 'structural.properties.R' 'structure.info.R' 'test.R' 'tkplot.R' 'topology.R' 'triangles.R' 'utils.R' 'uuid.R' 'versions.R' 'weakref.R' 'zzz-deprecate.R'
+# NeedsCompilation: yes
+# Packaged: 2019-02-13 11:36:26 UTC; gaborcsardi
+# Repository: CRAN
+# Date/Publication: 2019-02-13 17:40:19 UTC
