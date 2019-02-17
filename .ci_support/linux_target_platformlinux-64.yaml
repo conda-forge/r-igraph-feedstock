@@ -1,7 +1,5 @@
-build_number_decrement:
-- '1000'
 c_compiler:
-- toolchain_c
+- gcc
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -9,11 +7,11 @@ channel_targets:
 cran_mirror:
 - https://cran.r-project.org
 cxx_compiler:
-- toolchain_cxx
+- gxx
 docker_image:
-- condaforge/linux-anvil
+- condaforge/linux-anvil-comp7
 fortran_compiler:
-- toolchain_fort
+- gfortran
 pin_run_as_build:
   r-base:
     max_pin: x.x.x
@@ -21,11 +19,3 @@ r_base:
 - 3.5.1
 target_platform:
 - linux-64
-zip_keys:
-- - c_compiler
-  - cxx_compiler
-  - fortran_compiler
-  - channel_sources
-  - channel_targets
-  - docker_image
-  - build_number_decrement
