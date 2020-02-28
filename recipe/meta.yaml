@@ -40,11 +40,16 @@ requirements:
   host:
     - r-base
     - libblas
+    - liblapack
+    - gmp
+    - xml2
     - r-matrix
     - r-magrittr
     - r-pkgconfig >=2.0.0
   run:
     - r-base
+    - gmp
+    - xml2
     - {{native}}gcc-libs         # [win]
     - r-matrix
     - r-magrittr
