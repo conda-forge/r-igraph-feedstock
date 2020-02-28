@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,6 +39,7 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
+    - libblas
     - r-matrix
     - r-magrittr
     - r-pkgconfig >=2.0.0
