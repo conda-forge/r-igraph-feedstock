@@ -24,6 +24,8 @@ libblas:
 - 3.8 *netlib
 liblapack:
 - 3.8.0 *netlib
+libxml2:
+- '2.9'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 macos_min_version:
@@ -31,6 +33,8 @@ macos_min_version:
 pin_run_as_build:
   gmp:
     max_pin: x
+  libxml2:
+    max_pin: x.x
   r-base:
     min_pin: x.x
     max_pin: x.x

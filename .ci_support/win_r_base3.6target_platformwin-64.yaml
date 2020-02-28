@@ -10,6 +10,8 @@ libblas:
 - 3.8 *netlib
 liblapack:
 - 3.8.0 *netlib
+libxml2:
+- '2.9'
 m2w64_c_compiler:
 - m2w64-toolchain
 m2w64_cxx_compiler:
@@ -19,6 +21,8 @@ m2w64_fortran_compiler:
 pin_run_as_build:
   gmp:
     max_pin: x
+  libxml2:
+    max_pin: x.x
   r-base:
     min_pin: x.x
     max_pin: x.x
