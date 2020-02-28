@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,11 +39,17 @@ requirements:
     - {{posix}}zip               # [win]
   host:
     - r-base
+    - libblas
+    - liblapack
+    - gmp  # [not win]
+    - libxml2
     - r-matrix
     - r-magrittr
     - r-pkgconfig >=2.0.0
   run:
     - r-base
+    - gmp  # [not win]
+    - libxml2
     - {{native}}gcc-libs         # [win]
     - r-matrix
     - r-magrittr
