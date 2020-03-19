@@ -1,4 +1,4 @@
-{% set version = "1.2.4.2" %}
+{% set version = "1.2.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: ad67b58e9132128d8ea7ec0dee5c071a21f4674e8f2cbaa642555d23165e9969
+  sha256: 0cdd675b2e6a31f54bd5ba4530a26f00996eb310ceea93263c6fc4ba9e0fdf88
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -63,11 +63,10 @@ test:
 about:
   home: http://igraph.org
   license: GPL (>= 2)
-  summary: Routines for simple graphs and network analysis. It can handle large graphs very well
-    and provides functions for generating random and regular graphs, graph visualization,
-    centrality methods and much more.
+  summary: Routines for simple graphs and network analysis. It can handle large graphs very well and provides functions for generating random and regular graphs,
+    graph visualization, centrality methods and much more.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
 
 extra:
   recipe-maintainers:
