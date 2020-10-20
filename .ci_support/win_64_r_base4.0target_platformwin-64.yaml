@@ -7,7 +7,7 @@ cran_mirror:
 libblas:
 - 3.8 *netlib
 liblapack:
-- 3.8.0 *netlib
+- 3.8 *netlib
 libxml2:
 - '2.9'
 m2w64_c_compiler:
