@@ -1,9 +1,9 @@
-MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
 c_compiler:
-- clang
+- gcc
 c_compiler_version:
-- '10'
+- '9'
+cdt_name:
+- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -11,13 +11,15 @@ channel_targets:
 cran_mirror:
 - https://cran.r-project.org
 cxx_compiler:
-- clangxx
+- gxx
 cxx_compiler_version:
-- '10'
+- '9'
+docker_image:
+- quay.io/condaforge/linux-anvil-comp7
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '7'
+- '9'
 gmp:
 - '6'
 libblas:
@@ -26,8 +28,6 @@ liblapack:
 - 3.8 *netlib
 libxml2:
 - '2.9'
-macos_machine:
-- x86_64-apple-darwin13.4.0
 pin_run_as_build:
   gmp:
     max_pin: x
@@ -39,8 +39,10 @@ pin_run_as_build:
 r_base:
 - '4.0'
 target_platform:
-- osx-64
+- linux-64
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
+- - cdt_name
+  - docker_image
