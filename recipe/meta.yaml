@@ -37,6 +37,10 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-matrix                     # [build_platform != target_platform]
+    - r-magrittr                   # [build_platform != target_platform]
+    - r-pkgconfig >=2.0.0          # [build_platform != target_platform]
   host:
     - r-base
     - libblas
