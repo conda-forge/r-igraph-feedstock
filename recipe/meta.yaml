@@ -49,7 +49,7 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk
+    - {{ native }}glpk
     - gmp  # [not win]
     - libxml2
     - r-matrix
@@ -57,7 +57,7 @@ requirements:
     - r-pkgconfig >=2.0.0
   run:
     - r-base
-    - glpk
+    - {{ native }}glpk
     - gmp  # [not win]
     - libxml2
     - {{ native }}gcc-libs         # [win]
