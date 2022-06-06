@@ -49,8 +49,9 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk  # [not win]
     - gmp  # [not win]
+    - glpk  # [not win]
+    - {{ native }}glpk  # [win]
     - libxml2
     - r-matrix
     - r-magrittr
@@ -58,6 +59,7 @@ requirements:
   run:
     - r-base
     - glpk  # [not win]
+    - {{ native }}glpk  # [win]
     - gmp  # [not win]
     - libxml2
     - {{ native }}gcc-libs         # [win]
