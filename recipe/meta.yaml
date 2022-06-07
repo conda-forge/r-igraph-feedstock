@@ -49,18 +49,16 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk >=4.57
+    - glpk >=4.57  # [not win]
     - gmp  # [not win]
-    - mpir  # [win]
     - libxml2
     - r-matrix
     - r-magrittr
     - r-pkgconfig >=2.0.0
   run:
     - r-base
-    - glpk >=4.57
+    - glpk >=4.57  # [not win]
     - gmp  # [not win]
-    - mpir  # [win]
     - libxml2
     - {{ native }}gcc-libs         # [win]
     - r-matrix
