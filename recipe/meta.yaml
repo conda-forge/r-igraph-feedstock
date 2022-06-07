@@ -14,7 +14,7 @@ source:
 
 build:
   merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -49,6 +49,7 @@ requirements:
     - r-base
     - libblas
     - liblapack
+    - glpk >=4.57  # [not win]
     - gmp  # [not win]
     - libxml2
     - r-matrix
@@ -56,6 +57,7 @@ requirements:
     - r-pkgconfig >=2.0.0
   run:
     - r-base
+    - glpk >=4.57  # [not win]
     - gmp  # [not win]
     - libxml2
     - {{ native }}gcc-libs         # [win]

@@ -5,9 +5,9 @@ channel_targets:
 cran_mirror:
 - https://cran.r-project.org
 libblas:
-- 3.8 *netlib
+- 3.9 *netlib
 liblapack:
-- 3.8 *netlib
+- 3.9 *netlib
 libxml2:
 - '2.9'
 m2w64_c_compiler:
