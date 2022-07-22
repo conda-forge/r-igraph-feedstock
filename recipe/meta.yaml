@@ -46,8 +46,8 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk >=4.57
-    - gmp
+    - {{ native }}glpk >=4.57
+    - {{ native }}gmp
     - libxml2
     - r-matrix
     - r-magrittr
@@ -55,8 +55,8 @@ requirements:
     - r-rlang
   run:
     - r-base
-    - glpk >=4.57
-    - gmp
+    - {{ native }}glpk >=4.57
+    - {{ native }}gmp
     - libxml2
     - {{ native }}gcc-libs         # [win]
     - r-matrix
