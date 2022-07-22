@@ -4,6 +4,8 @@ channel_targets:
 - conda-forge main
 cran_mirror:
 - https://cran.r-project.org
+gmp:
+- '6'
 libblas:
 - 3.9 *netlib
 liblapack:
@@ -17,6 +19,8 @@ m2w64_cxx_compiler:
 m2w64_fortran_compiler:
 - m2w64-toolchain
 pin_run_as_build:
+  gmp:
+    max_pin: x
   libxml2:
     max_pin: x.x
   r-base:
