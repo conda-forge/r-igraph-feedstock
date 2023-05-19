@@ -9,7 +9,7 @@ libblas:
 liblapack:
 - 3.9 *netlib
 libxml2:
-- '2.10'
+- '2.11'
 m2w64_c_compiler:
 - m2w64-toolchain
 m2w64_cxx_compiler:
