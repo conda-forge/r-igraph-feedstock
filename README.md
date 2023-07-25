@@ -3,6 +3,7 @@ About r-igraph-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-igraph-feedstock/blob/main/LICENSE.txt)
 
+
 About r-igraph
 --------------
 
@@ -13,6 +14,7 @@ Package license: GPL-2.0-or-later
 Summary: Routines for simple graphs and network analysis. It can handle large graphs very well and provides functions for generating random and regular graphs, graph visualization, centrality methods and much more.
 
 Development: https://github.com/igraph/rigraph
+
 About r-igraph
 --------------
 
