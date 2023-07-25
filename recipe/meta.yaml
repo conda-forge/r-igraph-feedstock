@@ -39,9 +39,10 @@ requirements:
     - {{ posix }}zip                   # [win]
     - cross-r-base {{ r_base }}        # [build_platform != target_platform]
     - r-matrix                         # [build_platform != target_platform]
+    - r-cli                            # [build_platform != target_platform]
+    - r-cpp11 >=0.2.0                  # [build_platform != target_platform]
     - r-magrittr                       # [build_platform != target_platform]
     - r-pkgconfig >=2.0.0              # [build_platform != target_platform]
-    - r-cpp11 >=0.2.0                  # [build_platform != target_platform]
     - r-rlang                          # [build_platform != target_platform]
   host:
     - r-base
@@ -51,9 +52,10 @@ requirements:
     - gmp                   # [not win]
     - libxml2
     - r-matrix
+    - r-cli
+    - r-cpp11 >=0.2.0
     - r-magrittr
     - r-pkgconfig >=2.0.0
-    - r-cpp11 >=0.2.0
     - r-rlang
   run:
     - r-base
@@ -62,9 +64,10 @@ requirements:
     - libxml2
     - {{ native }}gcc-libs  # [win]
     - r-matrix
+    - r-cli
+    - r-cpp11 >=0.2.0
     - r-magrittr
     - r-pkgconfig >=2.0.0
-    - r-cpp11 >=0.2.0
     - r-rlang
 
 test:
