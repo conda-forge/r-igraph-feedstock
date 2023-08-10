@@ -38,31 +38,30 @@ requirements:
     - {{ posix }}coreutils             # [win]
     - {{ posix }}zip                   # [win]
     - cross-r-base {{ r_base }}        # [build_platform != target_platform]
-    - r-matrix                         # [build_platform != target_platform]
     - r-cli                            # [build_platform != target_platform]
     - r-cpp11 >=0.2.0                  # [build_platform != target_platform]
+    - r-lifecycle                      # [build_platform != target_platform]
     - r-magrittr                       # [build_platform != target_platform]
+    - r-matrix                         # [build_platform != target_platform]
     - r-pkgconfig >=2.0.0              # [build_platform != target_platform]
     - r-rlang                          # [build_platform != target_platform]
   host:
     - r-base
     - libblas
     - liblapack
-    - glpk >=4.57           # [not win]
-    - gmp                   # [not win]
+    - glpk                             # [not win]
+    - gmp                              # [not win]
     - libxml2
-    - r-matrix
     - r-cli
     - r-cpp11 >=0.2.0
+    - r-lifecycle
     - r-magrittr
+    - r-matrix
     - r-pkgconfig >=2.0.0
     - r-rlang
   run:
     - r-base
-    - glpk >=4.57           # [not win]
-    - gmp                   # [not win]
-    - libxml2
-    - {{ native }}gcc-libs  # [win]
+    - {{ native }}gcc-libs             # [win]
     - r-matrix
     - r-cli
     - r-cpp11 >=0.2.0
