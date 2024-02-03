@@ -1,4 +1,4 @@
-{% set version = "1.5.1" %}
+{% set version = "1.6.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: add90a1e77ad4a5d95641f0556553e3f1d1c4443cb2d5afb70171efd278ab14a
+  sha256: 410ecc37fb38e72079dc72f839bde19093100a422729c343e0b2523df6453bb8
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -39,7 +39,7 @@ requirements:
     - {{ posix }}zip                   # [win]
     - cross-r-base {{ r_base }}        # [build_platform != target_platform]
     - r-cli                            # [build_platform != target_platform]
-    - r-cpp11 >=0.2.0                  # [build_platform != target_platform]
+    - r-cpp11 >=0.4.7                  # [build_platform != target_platform]
     - r-lifecycle                      # [build_platform != target_platform]
     - r-magrittr                       # [build_platform != target_platform]
     - r-matrix                         # [build_platform != target_platform]
@@ -49,11 +49,11 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk                             # [not win]
+    - glpk >=4.57                      # [not win]
     - gmp                              # [not win]
     - libxml2
     - r-cli
-    - r-cpp11 >=0.2.0
+    - r-cpp11 >=0.4.7
     - r-lifecycle
     - r-magrittr
     - r-matrix
@@ -62,10 +62,11 @@ requirements:
   run:
     - r-base
     - {{ native }}gcc-libs             # [win]
-    - r-matrix
     - r-cli
-    - r-cpp11 >=0.2.0
+    - r-cpp11 >=0.4.7
+    - r-lifecycle
     - r-magrittr
+    - r-matrix
     - r-pkgconfig >=2.0.0
     - r-rlang
 
