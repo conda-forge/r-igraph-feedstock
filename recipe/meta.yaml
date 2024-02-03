@@ -1,4 +1,4 @@
-{% set version = "1.6.0" %}
+{% set version = "2.0.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 410ecc37fb38e72079dc72f839bde19093100a422729c343e0b2523df6453bb8
+  sha256: 1bb6c40a44a7aeba352c4d8bf8231e6948dfa8b9925ab99f96feba53e9f48866
 
 build:
   merge_build_host: true  # [win]
