@@ -49,7 +49,7 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk >=4.57                      # [not win]
+    - glpk                             # [not win]
     - gmp                              # [not win]
     - libxml2
     - r-cli
