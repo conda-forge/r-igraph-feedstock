@@ -11,6 +11,8 @@ source:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
   sha256: 1bb6c40a44a7aeba352c4d8bf8231e6948dfa8b9925ab99f96feba53e9f48866
+  patches:
+    - patches/0001-compatibility-for-older-gcc.patch
 
 build:
   merge_build_host: true  # [win]
