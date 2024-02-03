@@ -1,0 +1,22 @@
+From aebc3f0c1b7d2cc3af9ea635305195c93b20951a Mon Sep 17 00:00:00 2001
+From: Mervin Fansler <mmfansler@gmail.com>
+Date: Sat, 3 Feb 2024 14:04:40 -0500
+Subject: [PATCH] compatibility for older gcc
+
+---
+ src/vendor/igraph_config.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/vendor/igraph_config.h b/src/vendor/igraph_config.h
+index ccd1297735..5c0f62d9f8 100644
+--- a/src/vendor/igraph_config.h
++++ b/src/vendor/igraph_config.h
+@@ -35,7 +35,7 @@ __BEGIN_DECLS
+  */
+ #define IGRAPH_INTEGER_SIZE 64
+ 
+-#define IGRAPH_DEPRECATED_ENUMVAL __attribute__ ((deprecated))
++#define IGRAPH_DEPRECATED_ENUMVAL /* empty */
+ 
+ /**
+  * \define IGRAPH_BOOL_TYPE
