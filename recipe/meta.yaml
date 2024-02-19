@@ -45,6 +45,7 @@ requirements:
     - r-matrix                         # [build_platform != target_platform]
     - r-pkgconfig >=2.0.0              # [build_platform != target_platform]
     - r-rlang                          # [build_platform != target_platform]
+    - r-vctrs                          # [build_platform != target_platform]
   host:
     - r-base
     - libblas
@@ -59,6 +60,7 @@ requirements:
     - r-matrix
     - r-pkgconfig >=2.0.0
     - r-rlang
+    - r-vctrs
   run:
     - r-base
     - {{ native }}gcc-libs             # [win]
@@ -69,6 +71,7 @@ requirements:
     - r-matrix
     - r-pkgconfig >=2.0.0
     - r-rlang
+    - r-vctrs
 
 test:
   requires:
