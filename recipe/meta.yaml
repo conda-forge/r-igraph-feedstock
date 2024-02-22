@@ -1,4 +1,4 @@
-{% set version = "1.6.0" %}
+{% set version = "2.0.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 410ecc37fb38e72079dc72f839bde19093100a422729c343e0b2523df6453bb8
+  sha256: 34f9d5b778c2f41a024183cc3613a1716660f7e3ffb74a2af88c14efe94acc4d
 
 build:
   merge_build_host: true  # [win]
@@ -18,6 +18,7 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  skip: true  # [win]
 
 requirements:
   build:
@@ -45,6 +46,7 @@ requirements:
     - r-matrix                         # [build_platform != target_platform]
     - r-pkgconfig >=2.0.0              # [build_platform != target_platform]
     - r-rlang                          # [build_platform != target_platform]
+    - r-vctrs                          # [build_platform != target_platform]
   host:
     - r-base
     - libblas
@@ -59,6 +61,7 @@ requirements:
     - r-matrix
     - r-pkgconfig >=2.0.0
     - r-rlang
+    - r-vctrs
   run:
     - r-base
     - {{ native }}gcc-libs             # [win]
@@ -69,6 +72,7 @@ requirements:
     - r-matrix
     - r-pkgconfig >=2.0.0
     - r-rlang
+    - r-vctrs
 
 test:
   requires:
