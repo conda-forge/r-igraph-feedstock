@@ -76,6 +76,7 @@ requirements:
 
 test:
   requires:
+    - r-rgl
     - r-testthat
     - r-vdiffr
     - r-withr
