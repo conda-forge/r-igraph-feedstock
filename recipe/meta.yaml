@@ -11,6 +11,8 @@ source:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
   sha256: 8e8a172d4567219474562cfb1085496be3ab356483c4e88011aca1fc3b2d8f76
+  patches:
+    - patches/0001-conditional-rgl-tests.patch
 
 build:
   merge_build_host: true  # [win]
