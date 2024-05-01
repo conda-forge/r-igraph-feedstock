@@ -75,8 +75,8 @@ requirements:
 
 test:
   requires:
-    - r-rgl
     - r-testthat
+    - r-rgl       # [not ppc64le]
     - r-vdiffr
     - r-withr
   source_files:
