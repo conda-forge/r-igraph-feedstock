@@ -27,7 +27,8 @@ requirements:
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ compiler('fortran') }}        # [not win]
     - {{ compiler('m2w64_fortran') }}  # [win]
-    - {{ stdlib('c') }}
+    - {{ stdlib('c') }}                # [not win]
+    - {{ stdlib('m2w64_c') }}          # [win]
     - {{ posix }}filesystem            # [win]
     - {{ posix }}sed                   # [win]
     - {{ posix }}grep                  # [win]
@@ -64,7 +65,6 @@ requirements:
     - r-vctrs
   run:
     - r-base
-    - {{ native }}gcc-libs             # [win]
     - r-cli
     - r-cpp11 >=0.4.7
     - r-lifecycle
