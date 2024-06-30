@@ -14,7 +14,6 @@ source:
     - patches/0001-conditional-rgl-tests.patch
 
 build:
-  merge_build_host: true  # [win]
   number: 1
   rpaths:
     - lib/R/lib/
