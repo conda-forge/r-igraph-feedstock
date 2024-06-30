@@ -20,7 +20,6 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win]
 
 requirements:
   build:
