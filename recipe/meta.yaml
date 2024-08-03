@@ -54,8 +54,8 @@ requirements:
     - r-base
     - libblas
     - liblapack
-    - glpk                             # [not win]
-    - gmp                              # [not win]
+    - glpk
+    - gmp
     - libxml2
     - r-cli
     - r-cpp11 >=0.4.7
