@@ -1,4 +1,4 @@
-{% set version = "2.0.3" %}
+{% set version = "2.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 8e8a172d4567219474562cfb1085496be3ab356483c4e88011aca1fc3b2d8f76
+  sha256: c4831c306e80c28b5851d8d4bc5b1827f04cea8b9d628e1b747d2783bc65d2d3
   patches:
     - patches/0001-conditional-rgl-tests.patch
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
