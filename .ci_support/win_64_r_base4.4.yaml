@@ -9,9 +9,9 @@ glpk:
 gmp:
 - '6'
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
 libxml2:
 - '2'
 m2w64_c_compiler:
