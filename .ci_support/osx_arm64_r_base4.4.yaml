@@ -32,6 +32,8 @@ libblas:
 - 3.9.* *netlib
 liblapack:
 - 3.9.* *netlib
+liblzma_devel:
+- '5'
 libxml2:
 - '2'
 macos_machine:
@@ -48,3 +50,5 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
+zlib:
+- '1'
