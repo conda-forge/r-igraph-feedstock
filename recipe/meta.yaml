@@ -52,11 +52,13 @@ requirements:
     - {{ posix }}zip                   # [win]
   host:
     - r-base
-    - libblas
-    - liblapack
     - glpk
     - gmp
+    - libblas
+    - liblapack
+    - liblzma-devel
     - libxml2
+    - zlib
     - r-cli
     - r-cpp11 >=0.5.0
     - r-lifecycle
@@ -85,8 +87,8 @@ test:
   source_files:
     - tests/
   commands:
-    - $R -e "library('igraph')"                                              # [not win]
-    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"  # [not win]
+    - $R -e "library('igraph')"                                                       # [not win]
+    - $R -e "testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)"           # [not win]
     - "\"%R%\" -e \"library('igraph')\""                                              # [win]
     - "\"%R%\" -e \"testthat::test_file('tests/testthat.R', stop_on_failure=TRUE)\""  # [win]
 
