@@ -10,19 +10,28 @@ source:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
   sha256: fdced402c9d2e355fd1a5cbd640639fdc97efe50f5b69e9f321a03785a7ab3ed
-  patches:
-    - patches/0001-conditional-rgl-tests.patch
 
 build:
   number: 0
   rpaths:
     - lib/R/lib/
     - lib/
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}        # [build_platform != target_platform]
+    - r-cli                            # [build_platform != target_platform]
+    - r-cpp11 >=0.5.0                  # [build_platform != target_platform]
+    - r-lifecycle                      # [build_platform != target_platform]
+    - r-magrittr                       # [build_platform != target_platform]
+    - r-matrix                         # [build_platform != target_platform]
+    - r-pkgconfig >=2.0.0              # [build_platform != target_platform]
+    - r-rlang                          # [build_platform != target_platform]
+    - r-vctrs                          # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
     - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
@@ -41,15 +50,6 @@ requirements:
     - {{ posix }}make
     - {{ posix }}coreutils             # [win]
     - {{ posix }}zip                   # [win]
-    - cross-r-base {{ r_base }}        # [build_platform != target_platform]
-    - r-cli                            # [build_platform != target_platform]
-    - r-cpp11 >=0.4.7                  # [build_platform != target_platform]
-    - r-lifecycle                      # [build_platform != target_platform]
-    - r-magrittr                       # [build_platform != target_platform]
-    - r-matrix                         # [build_platform != target_platform]
-    - r-pkgconfig >=2.0.0              # [build_platform != target_platform]
-    - r-rlang                          # [build_platform != target_platform]
-    - r-vctrs                          # [build_platform != target_platform]
   host:
     - r-base
     - libblas
@@ -58,7 +58,7 @@ requirements:
     - gmp
     - libxml2
     - r-cli
-    - r-cpp11 >=0.4.7
+    - r-cpp11 >=0.5.0
     - r-lifecycle
     - r-magrittr
     - r-matrix
@@ -68,7 +68,7 @@ requirements:
   run:
     - r-base
     - r-cli
-    - r-cpp11 >=0.4.7
+    - r-cpp11 >=0.5.0
     - r-lifecycle
     - r-magrittr
     - r-matrix
