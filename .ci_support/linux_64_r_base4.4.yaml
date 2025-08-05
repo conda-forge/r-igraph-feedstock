@@ -1,13 +1,13 @@
 c_compiler:
 - gcc
 c_compiler_version:
-- '12'
+- '14'
 c_stdlib:
 - sysroot
 c_stdlib_version:
 - '2.17'
 cdt_name:
-- cos7
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -17,23 +17,25 @@ cran_mirror:
 cxx_compiler:
 - gxx
 cxx_compiler_version:
-- '12'
+- '14'
 docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+- quay.io/condaforge/linux-anvil-x86_64:alma9
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
-- '12'
+- '14'
 glpk:
 - '5.0'
 gmp:
 - '6'
 libblas:
-- 3.9 *netlib
+- 3.9.* *netlib
 liblapack:
-- 3.9 *netlib
+- 3.9.* *netlib
+liblzma_devel:
+- '5'
 libxml2:
-- '2'
+- '2.13'
 pin_run_as_build:
   r-base:
     min_pin: x.x
@@ -46,5 +48,5 @@ zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
   - fortran_compiler_version
-- - c_stdlib_version
-  - cdt_name
+zlib:
+- '1'

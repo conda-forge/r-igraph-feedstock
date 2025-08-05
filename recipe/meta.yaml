@@ -14,12 +14,14 @@ source:
     - patches/0001-conditional-rgl-tests.patch
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
-  # Checking windows to see if it passes. Uncomment the line if it fails.
-  # skip: true  # [win]
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -57,6 +59,8 @@ requirements:
     - glpk
     - gmp
     - libxml2
+    - liblzma-devel
+    - zlib
     - r-cli
     - r-cpp11 >=0.4.7
     - r-lifecycle
