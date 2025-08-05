@@ -59,6 +59,8 @@ requirements:
     - glpk
     - gmp
     - libxml2
+    - liblzma-devel
+    - zlib
     - r-cli
     - r-cpp11 >=0.4.7
     - r-lifecycle
