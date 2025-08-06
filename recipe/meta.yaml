@@ -1,4 +1,4 @@
-{% set version = "2.0.3" %}
+{% set version = "2.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,12 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 8e8a172d4567219474562cfb1085496be3ab356483c4e88011aca1fc3b2d8f76
-  patches:
-    - patches/0001-conditional-rgl-tests.patch
+  sha256: fdced402c9d2e355fd1a5cbd640639fdc97efe50f5b69e9f321a03785a7ab3ed
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -45,7 +43,7 @@ requirements:
     - {{ posix }}zip                   # [win]
     - cross-r-base {{ r_base }}        # [build_platform != target_platform]
     - r-cli                            # [build_platform != target_platform]
-    - r-cpp11 >=0.4.7                  # [build_platform != target_platform]
+    - r-cpp11 >=0.5.0                  # [build_platform != target_platform]
     - r-lifecycle                      # [build_platform != target_platform]
     - r-magrittr                       # [build_platform != target_platform]
     - r-matrix                         # [build_platform != target_platform]
@@ -62,7 +60,7 @@ requirements:
     - liblzma-devel
     - zlib
     - r-cli
-    - r-cpp11 >=0.4.7
+    - r-cpp11 >=0.5.0
     - r-lifecycle
     - r-magrittr
     - r-matrix
@@ -72,7 +70,7 @@ requirements:
   run:
     - r-base
     - r-cli
-    - r-cpp11 >=0.4.7
+    - r-cpp11 >=0.5.0
     - r-lifecycle
     - r-magrittr
     - r-matrix
