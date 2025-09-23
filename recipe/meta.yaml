@@ -56,7 +56,6 @@ requirements:
     - liblapack
     - glpk
     - gmp
-    - libxml2-devel
     - libxml2
     - liblzma-devel
     - zlib
