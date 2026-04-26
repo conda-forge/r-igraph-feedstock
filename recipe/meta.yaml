@@ -1,4 +1,4 @@
-{% set version = "2.2.3" %}
+{% set version = "2.3.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/igraph_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/igraph/igraph_{{ version }}.tar.gz
-  sha256: 2c997dd6d19c40e3f638623093d482e889c30ec16742cb2a42e35195a2c053b9
+  sha256: 454a77fbcba0f2a4dc5be069910d1d5cde16f0c736d723aff47d32395df79923
 
 build:
   number: 0
